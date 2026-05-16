@@ -1,0 +1,29 @@
+.header{
+    background-color: $color-primario;
+
+    .navbar{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        padding: 20px;
+
+        .logo{
+            color: %color-blanco;
+        }
+        .menu{
+            display: flex;
+            gap: 20px;
+
+            list-style: none;
+
+            a{
+                color: $color-blanco;
+                text-decoration: none;
+            }
+        }
+        .menu-btn{
+            display: block;
+        }
+    }
+}

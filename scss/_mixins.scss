@@ -1,0 +1,23 @@
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin boton{
+    background-color: $color-claro;
+    color: $color-blanco;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+
+    &:hover{
+        background-color: $color-oscuro;
+    }
+}
+
+@mixin responsive($size){
+    @media(max-wi)
+}

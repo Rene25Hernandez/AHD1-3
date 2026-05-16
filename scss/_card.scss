@@ -1,0 +1,41 @@
+.grid-proyectos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.card{
+    background-color: $color-blanco;
+    border-radius: 15px;
+
+    box-shadow: 0 4px 8p gray;
+    transition: .3s;
+    &:hover{
+        transform: translateY(-5px);
+    }
+    .card-body{
+        padding: 20px;
+
+    }
+    h3{
+        color: $color-oscuro;
+    }
+    p{
+        color: $color-oscuro;
+    }
+    a{
+        @include boton;
+
+        display: inline-block;
+        margin-top: 20px;
+    }
+    .tecnologias{
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        span{
+            background-color: $color-blanco;
+            padding: 5px 10px;
+            
+        }
+    }
+}
