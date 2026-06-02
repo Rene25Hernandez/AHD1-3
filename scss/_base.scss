@@ -1,10 +1,41 @@
-body{
-    height: 100%;
+// scss/_base.scss
+
+* {
     margin: 0;
-    font-family: $fuente;
-    background-color: $color-claro;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $fuente-principal;
+    background: $fondo-gradiente;
+    background-attachment: fixed; // Mantiene el fondo fijo para mejorar el efecto visual al hacer scroll
+    color: $color-texto-principal;
+    line-height: 1.6;
     min-height: 100vh;
+}
 
-    display: ;
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: $color-texto-principal;
+    margin-bottom: 3rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }

@@ -1,1 +1,19 @@
-$color-primario:
+// scss/_variables.scss
+
+// Degradado del fondo principal (esencial para que el glaseado resalte)
+$fondo-gradiente: linear-gradient(135deg, #0f172a 0%, #1e152a 50%, #0b1329 100%);
+
+// Colores del "Efecto Glaseado" (Blanco con alta transparencia)
+$glass-fondo: rgba(255, 255, 255, 0.06);
+$glass-borde: rgba(255, 255, 255, 0.12);
+$glass-sombra: rgba(0, 0, 0, 0.25);
+$glass-blur: blur(12px);
+
+// Colores de contraste y acentos (Pasteles/Neón para estilo moderno)
+$color-acento: #a855f7;       // Morado neón brillante
+$color-cyan: #06b6d4;         // Cyan para etiquetas/enlaces
+$color-texto-principal: #f8fafc;
+$color-texto-secundario: #94a3b8;
+
+$fuente-principal: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+$transicion: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);

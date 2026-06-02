@@ -1,7 +1,88 @@
-@import 'styles.scss';
+// scss/styles.scss
+
 @import 'variables';
-@import 'navbar';
 @import 'mixins';
-@import 'hero';
 @import 'base';
+@import 'navbar';
+@import 'hero';
 @import 'card';
+
+// Sección de Formulario de Contacto Glaseado
+.Contacto {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .formulario {
+        @include glass-effect;
+        padding: 2.5rem;
+        border-radius: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+
+        input, textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid $glass-borde;
+            border-radius: 12px;
+            padding: 1rem;
+            color: $color-texto-principal;
+            font-family: inherit;
+            transition: $transicion;
+            
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.4);
+            }
+            
+            &:focus {
+                outline: none;
+                background: rgba(255, 255, 255, 0.1);
+                border-color: $color-cyan;
+                box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+            }
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        button {
+            background: rgba(255, 255, 255, 0.1);
+            color: $color-texto-principal;
+            border: 1px solid $glass-borde;
+            padding: 1rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: $transicion;
+
+            &:hover {
+                background: $color-texto-principal;
+                color: #0f172a;
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            }
+        }
+    }
+}
+
+// Footer Esmerilado
+.footer {
+    border-top: 1px solid $glass-borde;
+    @include glass-effect;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    padding: 1.8rem;
+    font-size: 0.9rem;
+    color: $color-texto-secundario;
+}

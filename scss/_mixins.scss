@@ -1,23 +1,19 @@
-@mixin flex-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+// scss/_mixins.scss
+
+// La receta maestra del Glassmorphism
+@mixin glass-effect {
+    background: $glass-fondo;
+    backdrop-filter: $glass-blur;
+    -webkit-backdrop-filter: $glass-blur;
+    border: 1px solid $glass-borde;
+    box-shadow: 0 8px 32px 0 $glass-sombra;
 }
 
-@mixin boton{
-    background-color: $color-claro;
-    color: $color-blanco;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 8px;
-    font-weight: bold;
-
-    &:hover{
-        background-color: $color-oscuro;
-    }
+// Media Queries Responsivas
+@mixin tablet {
+    @media (min-width: 768px) { @content; }
 }
 
-@mixin responsive($size){
-    @media(max-wi)
+@mixin desktop {
+    @media (min-width: 1024px) { @content; }
 }
