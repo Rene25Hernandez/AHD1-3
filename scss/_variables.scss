@@ -1,19 +1,24 @@
-// scss/_variables.scss
+// Paleta Neón / Futurista
+$color-bg: #0a0c15;
+$color-bg-gradiente: radial-gradient(circle at 10% 20%, #111827, #03050b);
+$color-primary: #8b5cf6;     // violeta brillante
+$color-secondary: #06b6d4;    // cian
+$color-accent: #ec4899;       // rosa neón
+$color-white: #ffffff;
+$color-gray-light: #e2e8f0;
+$color-gray: #94a3b8;
+$color-dark: #1e293b;
 
-// Degradado del fondo principal (esencial para que el glaseado resalte)
-$fondo-gradiente: linear-gradient(135deg, #0f172a 0%, #1e152a 50%, #0b1329 100%);
+// Glassmorphism mejorado
+$glass-bg: rgba(15, 23, 42, 0.6);
+$glass-border: rgba(139, 92, 246, 0.3);
+$glass-blur: blur(16px);
+$glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 
-// Colores del "Efecto Glaseado" (Blanco con alta transparencia)
-$glass-fondo: rgba(255, 255, 255, 0.06);
-$glass-borde: rgba(255, 255, 255, 0.12);
-$glass-sombra: rgba(0, 0, 0, 0.25);
-$glass-blur: blur(12px);
+// Transiciones
+$transition-fast: all 0.2s ease;
+$transition-smooth: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
 
-// Colores de contraste y acentos (Pasteles/Neón para estilo moderno)
-$color-acento: #a855f7;       // Morado neón brillante
-$color-cyan: #06b6d4;         // Cyan para etiquetas/enlaces
-$color-texto-principal: #f8fafc;
-$color-texto-secundario: #94a3b8;
-
-$fuente-principal: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-$transicion: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+// Fuentes
+$font-display: 'Space Grotesk', sans-serif;
+$font-body: 'Inter', sans-serif;

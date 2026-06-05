@@ -1,108 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hub de Proyectos Web Responsivo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Hub Web | Proyectos Responsivos</title>
+    <!-- Font Awesome 6 (iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Inter y Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS principal -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <h1 class="logo">Hub Web</h1>
-            <button class="menu-btn" id="menu-btn">
-                ☰
-            </button>
-            <ul class="menu" id="menu">
-                <li>
-                    <a href="">Inicio</a>
-                </li>
-                <li>
-                    <a href="">Proyectos GitHub</a>
-                </li>
-                <li>
-                    <a href="">Contacto</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h2>Hub de Proyectos Web Responsivo</h2>
-            <P>
-                Sitio web responsivo con HTML, CSS,  JS y SASS
-            </P>
+<header class="header">
+    <nav class="navbar">
+        <div class="logo">
+            <!-- Reemplaza este i y span por tu imagen si lo deseas -->
+            <img src="img/rene.png" alt="Logo" style="height: 40px;">
+            <span>HUB<span class="dot">•</span>WEB</span>
         </div>
+        <button class="menu-btn" id="menu-btn" aria-label="Menú">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="menu" id="menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero" id="inicio">
+    <div class="hero-content">
+        <div class="hero-badge">
+            <i class="fas fa-code"></i> Portafolio 2026
+        </div>
+        <h2>Hub de Proyectos Web <span class="gradient-text">Responsivo</span></h2>
+        <p>Sitios modernos con HTML, CSS, JavaScript y SASS. Diseño glassmorphism, animaciones fluidas y código limpio.</p>
+        <div class="hero-buttons">
+            <a href="#proyectos" class="btn-primary">Explorar Proyectos <i class="fas fa-arrow-right"></i></a>
+            <a href="#contacto" class="btn-secondary">Contactar <i class="fas fa-paper-plane"></i></a>
+        </div>
+    </div>
+    <div class="hero-shape"></div>
+</section>
+
+<main class="contenedor" id="proyectos">
+    <h2 class="titulo">✨ Mis Proyectos AHD1</h2>
+    <section class="grid-proyectos">
+        <!-- Proyecto 1 -->
+        <article class="card">
+            <div class="card-img">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="card-body">
+                <h3>Plataforma de Eventos INTECAP</h3>
+                <p>Visualización de talleres y seminarios con modal interactivo y grid responsive.</p>
+                <div class="tecnologias">
+                    <span>HTML5</span><span>CSS3</span><span>JS</span><span>SASS</span>
+                </div>
+                <a href="https://rene25hernandez.github.io/eventosintecap/" class="btn-card" data-proyecto="eventos">Ver Proyecto <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </article>
+        <!-- Proyecto 2 -->
+        <article class="card">
+            <div class="card-img">
+                <i class="fas fa-dumbbell"></i>
+            </div>
+            <div class="card-body">
+                <h3>Plataforma de Gimnasio Fit</h3>
+                <p>Planes de entrenamiento, selección de coaches y efectos hover con imágenes dinámicas.</p>
+                <div class="tecnologias">
+                    <span>HTML5</span><span>CSS3</span><span>JS</span>
+                </div>
+                <a href="https://rene25hernandez.github.io/powergym/" class="btn-card" data-proyecto="gimnasio">Ver Proyecto <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </article>
+        <!-- Proyecto 3 -->
+        <article class="card">
+            <div class="card-img">
+                <i class="fas fa-mug-hot"></i>
+            </div>
+            <div class="card-body">
+                <h3>Plataforma de Cafetería</h3>
+                <p>Personaliza tu café, pedidos en tiempo real y diseño elegante con SASS.</p>
+                <div class="tecnologias">
+                    <span>HTML5</span><span>CSS3</span><span>SASS</span>
+                </div>
+                <a href="https://rene25hernandez.github.io/cafeteria/" class="btn-card" data-proyecto="cafeteria">Ver Proyecto <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </article>
     </section>
+</main>
 
-    <main class="contenedor" id="proyectos">
-        <h2 class="titulo">Mis Proyectos AHD1</h2>
-        <section class="grid-proyectos">
-            <article class="card">
-                <img src="" alt="Proyecto 1">
-                <div class="card-body">
+<section class="contacto" id="contacto">
+    <h2 class="titulo">📬 Contacto</h2>
+    <form class="formulario" id="contactForm">
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Nombre completo" required>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Correo electrónico" required>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-comment"></i>
+            <textarea placeholder="Cuéntame sobre tu proyecto..." rows="5" required></textarea>
+        </div>
+        <button type="submit">Enviar mensaje <i class="fas fa-paper-plane"></i></button>
+    </form>
+</section>
 
-                    <h3>Plataforma de Eventos INTECAP</h3>
-                    <p>Plataforma para visualizar eventos de tipo taller y seminario</p>
-                    <div class="tecnologias">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JS</span>
-                        <span>SASS</span>
-                    </div>
-                    <a href="">Ver Proyecto</a>
-                </div>
-            </article>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <i class="fas fa-cube"></i> HubWeb
+        </div>
+        <div class="social-links">
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>© 2026 FULL STACK | INTECAP — Diseño vanguardista</p>
+    </div>
+</footer>
 
-            <article class="card">
-                <img src="" alt="Proyecto 2">
-                <div class="card-body">
-
-                    <h3>Plataforma de Gimnacio Fit</h3>
-                    <p>Plataforma para visualizar y adquirir planes y entrenadores el cual puedes seleccionar a tu gusto</p>
-                    <div class="tecnologias">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JS</span>
-                    </div>
-                    <a href="">Ver Proyecto</a>
-                </div>
-            </article>
-
-            <article class="card">
-                <img src="" alt="Proyecto 3">
-                <div class="card-body">
-
-                    <h3>Plataforma de Cafeteria</h3>
-                    <p>Plataforma para ordenar Café a tu preferencia</p>
-                    <div class="tecnologias">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>SASS</span>
-                    </div>
-                    <a href="">Ver Proyecto</a>
-                </div>
-            </article>
-        </section>
-    </main>
-
-    <section class="Contacto" id="Contacto">
-        <h2>Contacto</h2>
-        <form class="formulario">
-             <input type="text" placeholder="Nombre">
-             <input type="email" placeholder="Correo">
-             <textarea placeholder="Mensaje"></textarea>
-             <button type="submit">
-                 Enviar
-             </button>
-        </form>
-    </section>
-
-    <footer class="footer">
-        <p> 2026 Hub web</p>
-    </footer>
-
-    <script src="js/script.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

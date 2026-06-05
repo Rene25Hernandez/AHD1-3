@@ -1,89 +1,123 @@
-// scss/_card.scss
-
 .grid-proyectos {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2.5rem;
-
-    @include tablet {
+    gap: 2rem;
+    
+    @include responsive(tablet) {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    @include desktop {
+    @include responsive(desktop) {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 .card {
     @include glass-effect;
-    border-radius: 20px;
+    border-radius: 28px;
     overflow: hidden;
-    transition: $transicion;
-
+    transition: $transition-smooth;
+    transform: translateY(0);
+    position: relative;
+    backdrop-filter: blur(12px);
+    
     &:hover {
-        transform: translateY(-8px);
-        background: rgba(255, 255, 255, 0.12); // Se vuelve un poco más opaco al hacer hover
-        border-color: rgba(255, 255, 255, 0.25);
-        box-shadow: 0 12px 40px 0 rgba(168, 85, 247, 0.2); // Brillo púrpura sutil
+        transform: translateY(-10px);
+        border-color: rgba(139,92,246,0.6);
+        @include neon-glow($color-primary);
     }
-
-    img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        background: linear-gradient(45deg, rgba($color-acento, 0.2), rgba($color-cyan, 0.2));
-        border-bottom: 1px solid $glass-borde;
+    
+    .card-img {
+        height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(236,72,153,0.1));
+        
+        i {
+            font-size: 4rem;
+            color: $color-primary;
+            filter: drop-shadow(0 0 8px rgba(139,92,246,0.6));
+            transition: $transition-smooth;
+        }
+        
+        &:hover i {
+            transform: scale(1.1);
+            color: $color-accent;
+        }
     }
-
+    
     .card-body {
-        padding: 2rem;
-
+        padding: 1.8rem;
+        
         h3 {
-            font-size: 1.4rem;
-            color: $color-texto-principal;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $color-white;
             margin-bottom: 0.8rem;
         }
-
+        
         p {
-            color: $color-texto-secundario;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            height: 70px; // Altura fija para homogeneizar las tarjetas
+            color: $color-gray;
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            height: 70px;
             overflow: hidden;
         }
-
+        
         .tecnologias {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 2rem;
-
+            margin-bottom: 1.8rem;
+            
             span {
-                background: rgba(6, 182, 212, 0.15);
-                color: #22d3ee;
-                padding: 0.25rem 0.75rem;
+                background: rgba(6,182,212,0.15);
+                color: $color-secondary;
+                padding: 0.2rem 0.8rem;
                 border-radius: 30px;
-                font-size: 0.75rem;
+                font-size: 0.7rem;
                 font-weight: 600;
-                border: 1px solid rgba(6, 182, 212, 0.3);
+                border: 1px solid rgba(6,182,212,0.3);
+                transition: $transition-fast;
+                
+                &:hover {
+                    background: rgba(6,182,212,0.3);
+                    transform: translateY(-2px);
+                }
             }
         }
-
-        a {
-            display: block;
-            text-align: center;
-            background: linear-gradient(135deg, $color-acento 0%, #7c3aed 100%);
-            color: $color-texto-principal;
-            padding: 0.8rem;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: $transicion;
-            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
-
+        
+        .btn-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(95deg, rgba(139,92,246,0.2), transparent);
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            color: $color-primary;
+            border: 1px solid rgba(139,92,246,0.4);
+            transition: $transition-smooth;
+            
             &:hover {
-                filter: brightness(1.2);
-                box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+                background: $color-primary;
+                color: white;
+                border-color: $color-primary;
+                gap: 12px;
+                box-shadow: 0 0 12px rgba(139,92,246,0.6);
             }
         }
+    }
+    
+    // Animación escalonada
+    &:nth-child(1) { animation: fadeUp 0.5s ease-out 0.1s forwards; opacity: 0; }
+    &:nth-child(2) { animation: fadeUp 0.5s ease-out 0.2s forwards; opacity: 0; }
+    &:nth-child(3) { animation: fadeUp 0.5s ease-out 0.3s forwards; opacity: 0; }
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

@@ -1,46 +1,68 @@
-// scss/_navbar.scss
-
 .header {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     @include glass-effect;
+    backdrop-filter: blur(12px);
     border-top: none;
     border-left: none;
-    border-right: none; // Solo dejamos el borde inferior
+    border-right: none;
+    transition: $transition-smooth;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 2rem;
-    max-width: 1200px;
+    padding: 1rem 2rem;
+    max-width: 1300px;
     margin: 0 auto;
 
     .logo {
-        font-size: 1.6rem;
-        font-weight: 800;
-        background: linear-gradient(to right, #fff, $color-cyan);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: $font-display;
+        font-size: 1.7rem;
+        font-weight: 700;
+        
+        i {
+            font-size: 2rem;
+            color: $color-primary;
+            filter: drop-shadow(0 0 8px rgba(139,92,246,0.5));
+        }
+        
+        span {
+            background: linear-gradient(135deg, #fff, $color-secondary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .dot {
+            color: $color-accent;
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
     }
 
     .menu-btn {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid $glass-borde;
-        color: $color-texto-principal;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid $glass-border;
+        color: $color-white;
         font-size: 1.5rem;
-        padding: 0.2rem 0.6rem;
-        border-radius: 8px;
+        padding: 0.5rem 0.9rem;
+        border-radius: 12px;
         cursor: pointer;
-        transition: $transicion;
+        transition: $transition-fast;
         
         &:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(139,92,246,0.3);
+            transform: scale(1.02);
         }
-
-        @include tablet {
+        
+        @include responsive(tablet) {
             display: none;
         }
     }
@@ -54,39 +76,64 @@
         left: 0;
         width: 100%;
         @include glass-effect;
-        border-left: none;
-        border-right: none;
-        padding: 1.5rem 0;
-        gap: 1rem;
+        border-radius: 0 0 20px 20px;
+        padding: 1.5rem;
+        gap: 1.2rem;
         text-align: center;
-
-        &.activo {
+        backdrop-filter: blur(20px);
+        
+        &.active {
             display: flex;
+            animation: slideDown 0.3s ease;
         }
-
-        @include tablet {
+        
+        @include responsive(tablet) {
             display: flex;
             flex-direction: row;
             position: static;
-            width: auto;
-            background: none;
+            background: transparent;
             border: none;
-            box-shadow: none;
-            padding: 0;
-            gap: 2.5rem;
             backdrop-filter: none;
+            padding: 0;
+            gap: 2rem;
+            width: auto;
         }
-
-        a {
+        
+        li a {
             font-weight: 500;
-            color: $color-texto-secundario;
-            transition: $transicion;
+            color: $color-gray;
+            transition: $transition-fast;
             padding: 0.5rem 0;
-
+            position: relative;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(90deg, $color-primary, $color-accent);
+                transition: $transition-smooth;
+            }
+            
             &:hover {
-                color: $color-texto-principal;
-                text-shadow: 0 0 10px rgba(255,255,255,0.5);
+                color: $color-white;
+                &::after {
+                    width: 100%;
+                }
             }
         }
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
